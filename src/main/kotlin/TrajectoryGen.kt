@@ -22,7 +22,7 @@ object TrajectoryGen {
 //    private val startPose = Pose2d(-36.0, -63.0, Math.toRadians(-90.0))
 
     // BLUE CLOSE START POSE
-//    private val startPose = Pose2d(12.0,63.0, Math.toRadians(90.0) )
+    private val startPose = Pose2d(12.0,63.0, Math.toRadians(90.0) )
 
     // BLUE FAR START POSE
 //    private val startPose = Pose2d(-36.0, 63.0, Math.toRadians(90.0))
@@ -215,18 +215,18 @@ object TrajectoryGen {
         //    \ | /
         //     \|/
 
-//        val builder1 = TrajectoryBuilder(startPose, startPose.heading, combinedConstraints)
-//            .forward(-5.0)
-//            .splineTo(Vector2d(16.0, 42.0), Math.toRadians(-90.0))
-//            .splineTo(Vector2d(12.0,33.0), Math.toRadians(90.0))
-//            .build()
-//        val builder2 = TrajectoryBuilder(builder1.end(),builder1.end().heading, combinedConstraints)
-//            .forward(-5.0)
-//            .splineTo(Vector2d(40.0, 36.0), Math.toRadians(0.0))
-//            .build()
-//        val builder3 = TrajectoryBuilder(builder2.end(),builder2.end().heading, combinedConstraints)
-//            .forward(-12.0)
-//            .build()
+        val builder1 = TrajectoryBuilder(startPose, startPose.heading, combinedConstraints)
+            .forward(-5.0)
+            .splineTo(Vector2d(16.0, 42.0), Math.toRadians(-90.0))
+            .splineTo(Vector2d(12.0,33.0), Math.toRadians(90.0))
+            .build()
+        val builder2 = TrajectoryBuilder(builder1.end(),builder1.end().heading, combinedConstraints)
+            .forward(-5.0)
+            .splineTo(Vector2d(40.0, 38.0), Math.toRadians(0.0))
+            .build()
+        val builder3 = TrajectoryBuilder(builder2.end(),builder2.end().heading, combinedConstraints)
+            .forward(-12.0)
+            .build()
 
         // BLUE FAR LEFT AUTO
         //      |
@@ -297,9 +297,9 @@ object TrajectoryGen {
 
         // RED TEST AUTO
 
-//        list.add(builder1)
-//        list.add(builder2)
-//        list.add(builder3)
+        list.add(builder1)
+        list.add(builder2)
+        list.add(builder3)
 //        list.add(builder4)
 //        list.add(builder5)
 
