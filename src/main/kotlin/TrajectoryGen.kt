@@ -8,7 +8,7 @@ import java.util.Vector
 
 object TrajectoryGen {
     // Remember to set these constraints to the same values as your DriveConstants.java file in the quickstart
-    private val driveConstraints = DriveConstraints(35.0, 30.0, 0.0, 162.1250311208178.toRadians, 162.1250311208178.toRadians, 0.0)
+    private val driveConstraints = DriveConstraints(50.0, 45.0, 0.0, 162.1250311208178.toRadians, 162.1250311208178.toRadians, 0.0)
 
     // Remember to set your track width to an estimate of your actual bot to get accurate trajectory profile duration!
     private const val trackWidth = 16.34
@@ -16,13 +16,13 @@ object TrajectoryGen {
     private val combinedConstraints = MecanumConstraints(driveConstraints, trackWidth)
 
     // RED CLOSE START POSE
-//    private val startPose = Pose2d(12.0,-63.0, Math.toRadians(-90.0) )
+    private val startPose = Pose2d(12.0,-63.0, Math.toRadians(-90.0) )
 
     // RED FAR START POSE
 //    private val startPose = Pose2d(-36.0, -63.0, Math.toRadians(-90.0))
 
     // BLUE CLOSE START POSE
-    private val startPose = Pose2d(12.0,63.0, Math.toRadians(90.0) )
+//    private val startPose = Pose2d(12.0,63.0, Math.toRadians(90.0) )
 
     // BLUE FAR START POSE
 //    private val startPose = Pose2d(-36.0, 63.0, Math.toRadians(90.0))
@@ -108,7 +108,7 @@ object TrajectoryGen {
 
 //        val builder1 = TrajectoryBuilder(startPose, startPose.heading, combinedConstraints)
 //            .forward(-21.0)
-//            .splineTo(Vector2d(-39.0,-36.0), Math.toRadians(0.0))
+//            .splineTo(Vector2d(-39.0,-32.0), Math.toRadians(0.0))
 //            .build()
 //        val builder2 = TrajectoryBuilder(builder1.end(),builder1.end().heading, combinedConstraints)
 //            .forward(-3.0)
@@ -117,7 +117,7 @@ object TrajectoryGen {
 //            .strafeRight(8.0)
 //            .splineTo(Vector2d(-20.0, -12.0), Math.toRadians(0.0))
 //            .strafeRight(30.0)
-//            .splineTo(Vector2d(40.0, -30.5), Math.toRadians(90.0))
+//            .splineTo(Vector2d(40.0, -31.5), Math.toRadians(90.0))
 //            .build()
 //        val builder4 = TrajectoryBuilder(builder3.end(),builder3.end().heading, combinedConstraints)
 //            .forward(-12.0)
@@ -139,7 +139,7 @@ object TrajectoryGen {
 //            .build()
 //        val builder3 = TrajectoryBuilder(builder2.end(),builder2.end().heading, combinedConstraints)
 //            .strafeLeft(8.0)
-//            .splineTo(Vector2d(40.0, -41.0), Math.toRadians(-90.0))
+//            .splineTo(Vector2d(40.0, -43.0), Math.toRadians(-90.0))
 //            .build()
 //        val builder4 = TrajectoryBuilder(builder3.end(),builder3.end().heading, combinedConstraints)
 //            .forward(-12.0)
@@ -160,7 +160,7 @@ object TrajectoryGen {
 //            .build()
 //        val builder3 = TrajectoryBuilder(builder2.end(),builder2.end().heading, combinedConstraints)
 //            .strafeLeft(35.0)
-//            .splineTo(Vector2d(40.0, -36.0), Math.toRadians(-90.0))
+//            .splineTo(Vector2d(40.0, -38.0), Math.toRadians(-90.0))
 //            .build()
 //        val builder4 = TrajectoryBuilder(builder3.end(),builder3.end().heading, combinedConstraints)
 //            .forward(-12.0)
@@ -215,18 +215,18 @@ object TrajectoryGen {
         //    \ | /
         //     \|/
 
-        val builder1 = TrajectoryBuilder(startPose, startPose.heading, combinedConstraints)
-            .forward(-5.0)
-            .splineTo(Vector2d(16.0, 42.0), Math.toRadians(-90.0))
-            .splineTo(Vector2d(12.0,33.0), Math.toRadians(90.0))
-            .build()
-        val builder2 = TrajectoryBuilder(builder1.end(),builder1.end().heading, combinedConstraints)
-            .forward(-5.0)
-            .splineTo(Vector2d(40.0, 38.0), Math.toRadians(0.0))
-            .build()
-        val builder3 = TrajectoryBuilder(builder2.end(),builder2.end().heading, combinedConstraints)
-            .forward(-12.0)
-            .build()
+//        val builder1 = TrajectoryBuilder(startPose, startPose.heading, combinedConstraints)
+//            .forward(-5.0)
+//            .splineTo(Vector2d(16.0, 42.0), Math.toRadians(-90.0))
+//            .splineTo(Vector2d(12.0,33.0), Math.toRadians(90.0))
+//            .build()
+//        val builder2 = TrajectoryBuilder(builder1.end(),builder1.end().heading, combinedConstraints)
+//            .forward(-5.0)
+//            .splineTo(Vector2d(40.0, 38.0), Math.toRadians(0.0))
+//            .build()
+//        val builder3 = TrajectoryBuilder(builder2.end(),builder2.end().heading, combinedConstraints)
+//            .forward(-12.0)
+//            .build()
 
         // BLUE FAR LEFT AUTO
         //      |
@@ -259,7 +259,7 @@ object TrajectoryGen {
 
 //        val builder1 = TrajectoryBuilder(startPose, startPose.heading, combinedConstraints)
 //            .forward(-21.0)
-//            .splineTo(Vector2d(-40.0,36.0), Math.toRadians(0.0))
+//            .splineTo(Vector2d(-40.0,32.0), Math.toRadians(0.0))
 //            .build()
 //        val builder2 = TrajectoryBuilder(builder1.end(),builder1.end().heading, combinedConstraints)
 //            .forward(-3.0)
@@ -295,13 +295,76 @@ object TrajectoryGen {
 //            .forward(-12.0)
 //            .build()
 
-        // RED TEST AUTO
+        // RED RIGHT TEST AUTO
+        //      |
+        //      |
+        //      |
+        //    \ | /
+        //     \|/
+
+
+        val builder1 = TrajectoryBuilder(startPose, startPose.heading, combinedConstraints)
+            .strafeLeft(10.0)
+            .build()
+        val builder2 = TrajectoryBuilder(builder1.end(), builder1.end().heading, combinedConstraints)
+            .forward(-35.0)
+            .build()
+        val builder3 = TrajectoryBuilder(builder2.end(), builder2.end().heading, combinedConstraints)
+            .forward(-4.0)
+            .build()
+        val builder4 = TrajectoryBuilder(builder3.end(), builder3.end().heading, combinedConstraints)
+            .strafeLeft(2.0)
+            .splineTo(Vector2d(52.0, -41.0), Math.toRadians(-90.0))
+            .build()
+        val builder5 = TrajectoryBuilder(builder4.end(), builder4.end().heading, combinedConstraints)
+            .forward(3.0)
+            .splineTo(Vector2d(30.0, -12.0), Math.toRadians(180.0))
+            .forward(50.0)
+            .splineTo(Vector2d(-58.0, -29.0), Math.toRadians(180.0))
+            .build()
+        val builder6 = TrajectoryBuilder(builder5.end(), builder5.end().heading, combinedConstraints)
+            .forward(-3.0)
+            .build()
+        val builder7 = TrajectoryBuilder(builder6.end(), builder6.end().heading, combinedConstraints)
+            .strafeRight(3.0)
+            .build()
+        val builder8 = TrajectoryBuilder(builder7.end(), builder7.end().heading, combinedConstraints)
+            .forward(3.0)
+            .build()
+        val builder9 = TrajectoryBuilder(builder8.end(), builder8.end().heading, combinedConstraints)
+            .forward(-3.0)
+            .splineTo(Vector2d(-30.0, -12.0), Math.toRadians(0.0))
+            .forward(-50.0)
+            .splineTo(Vector2d(52.0, -41.0), Math.toRadians(0.0))
+            .build()
+//        val builder10 = TrajectoryBuilder(builder9.end(), builder9.end().heading, combinedConstraints)
+//            .forward(3.0)
+//            .splineTo(Vector2d(30.0, -12.0), Math.toRadians(180.0))
+//            .forward(50.0)
+//            .splineTo(Vector2d(-58.0, -29.0), Math.toRadians(180.0))
+//            .build()
+//        val builder11 = TrajectoryBuilder(builder10.end(), builder10.end().heading, combinedConstraints)
+//            .forward(-3.0)
+//            .splineTo(Vector2d(-30.0, -12.0), Math.toRadians(0.0))
+//            .forward(-50.0)
+//            .splineTo(Vector2d(52.0, -41.0), Math.toRadians(0.0))
+//            .build()
+        val builder10 = TrajectoryBuilder(builder9.end(),builder9.end().heading, combinedConstraints)
+            .strafeLeft(22.0)
+            .build()
 
         list.add(builder1)
         list.add(builder2)
         list.add(builder3)
-//        list.add(builder4)
-//        list.add(builder5)
+        list.add(builder4)
+        list.add(builder5)
+        list.add(builder6)
+        list.add(builder7)
+        list.add(builder8)
+        list.add(builder9)
+        list.add(builder10)
+//        list.add(builder11)
+//        list.add(builder12)
 
 
         return list
